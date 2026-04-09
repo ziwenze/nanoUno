@@ -2,13 +2,33 @@
 
 这是一个用 Python `tkinter` 写的本地 UNO 小游戏，支持图形界面和多个 AI 对手。对局规则按经典 UNO 的核心玩法实现，支持多人方向变化，也保留了双人局下 `Reverse` 视作 `Skip` 的规则。
 
-## 运行方式
+## 环境依赖
 
-先激活你刚创建好的 conda 环境：
+- Python `3.13`
+- `tk`（`tkinter` 图形界面运行库）
+- 其他部分仅使用 Python 标准库，不需要额外安装 `pip` 包
+
+项目已经提供了 `environment.yml`，推荐直接用 conda 创建环境：
 
 ```bash
+conda env create -f environment.yml
 conda activate uno
+```
+
+如果你已经有同名环境，也可以手动确认里面至少包含 `python` 和 `tk`。
+
+## 运行方式
+
+如果你还没有把项目拉到本地，可以先执行：
+
+```bash
+git clone https://github.com/ziwenze/nanoUno.git
 cd nanoUno
+```
+
+创建并激活环境后，在仓库目录里运行：
+
+```bash
 python app.py
 ```
 
