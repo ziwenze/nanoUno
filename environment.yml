@@ -1,0 +1,4 @@
+name: uno
+dependencies:
+  - python=3.13
+  - tk
