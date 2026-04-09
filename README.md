@@ -8,7 +8,7 @@
 
 ```bash
 conda activate uno
-cd /Users/ziwenze/code/uno
+cd nanoUno
 python app.py
 ```
 
