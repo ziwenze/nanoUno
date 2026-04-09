@@ -32,6 +32,39 @@ cd nanoUno
 python app.py
 ```
 
+## 发布 Release
+
+仓库已经配置了自动打包发布流程。你只需要给版本打一个 tag 并推送，GitHub Actions 就会自动构建发布文件，并创建 GitHub Release。
+
+推荐流程：
+
+```bash
+git checkout main
+git pull
+git tag v0.1.0
+git push origin v0.1.0
+```
+
+自动发布内容：
+
+- `nanoUno-macos.zip`
+- `nanoUno-windows.zip`
+
+其中：
+
+- macOS 会打包成 `.app` 后再压缩
+- Windows 会打包成单文件 `.exe` 后再压缩
+- 每次发布前都会先跑 `tests/` 里的单元测试
+
+你也可以在 GitHub 的 `Actions` 页面手动触发 `Build Release` 工作流，先检查打包是否正常。
+
+## Release 注意事项
+
+- 现在这套流程已经能生成“下载后可运行”的发布包
+- 但 macOS 版本目前还是未签名应用，第一次打开时系统可能会提示安全限制
+- 如果你想做到更顺滑的“下载后直接双击打开”，后续还需要加 Apple Developer 签名和 notarization
+- Windows 如果想减少安全警告，也可以后续再接代码签名证书
+
 ## 已实现内容
 
 - 图形界面
